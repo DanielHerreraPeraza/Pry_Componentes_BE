@@ -27,7 +27,7 @@ public class QuoteApi {
     }
     
     @DeleteMapping
-    public Mono<Void> Quote(@RequestBody String id) {
+    public Mono<Void> Quote(@RequestParam String id) {
         return userRepository.deleteById(id);
     }
 
