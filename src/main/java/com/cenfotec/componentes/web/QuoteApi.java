@@ -8,20 +8,25 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/quotes")
 public class QuoteApi {
 
     @Autowired
     private QuoteRepository userRepository;
 
     @GetMapping
-    public Flux<Quote> getAllUsers() {
+    public Flux<Quote> getAllQuotes() {
         return userRepository.findAll();
     }
 
-    @PostMapping("/saveUser")
-    public Mono<Quote> saveUser(@RequestBody Quote u) {
+    @PostMapping
+    public Mono<Quote> Quote(@RequestBody Quote u) {
         return userRepository.save(u);
+    }
+    
+    @DeleteMapping
+    public Mono<Void> Quote(@RequestBody String id) {
+        return userRepository.deleteById(id);
     }
 
 }

@@ -5,5 +5,5 @@ import reactor.core.publisher.Flux;
 
 public interface QuoteService {
     public Flux<Quote> findAll();
-    public void saveUser(Quote u);
+    public void saveQuote(Quote u);
 }

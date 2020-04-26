@@ -1,13 +1,11 @@
 package com.cenfotec.componentes.domain;
 
 import com.google.cloud.firestore.annotation.DocumentId;
-
-import java.time.LocalTime;
 import java.util.Date;
 
 import org.springframework.cloud.gcp.data.firestore.Document;
 
-@Document(collectionName = "quotes")
+@Document(collectionName = "quote")
 public class Quote {
 
     @DocumentId
@@ -15,13 +13,13 @@ public class Quote {
     private String pet;
     private String owner;
     private Date date;
-    private LocalTime hour;
+    private String hour;
     private String symptom;
     
     Quote() {
     }
     
-	public Quote(String id, String pet, String owner, Date date, LocalTime hour, String symptom) {
+	public Quote(String id, String pet, String owner, Date date, String hour, String symptom) {
 		this.id = id;
 		this.pet = pet;
 		this.owner = owner;
@@ -62,11 +60,11 @@ public class Quote {
 		this.date = date;
 	}
 
-	public LocalTime getHour() {
+	public String getHour() {
 		return hour;
 	}
 
-	public void setHour(LocalTime hour) {
+	public void setHour(String hour) {
 		this.hour = hour;
 	}
 
