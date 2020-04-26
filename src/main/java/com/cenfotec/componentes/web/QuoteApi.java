@@ -1,7 +1,7 @@
 package com.cenfotec.componentes.web;
 
-import com.cenfotec.componentes.domain.User;
-import com.cenfotec.componentes.repository.UserRepository;
+import com.cenfotec.componentes.domain.Quote;
+import com.cenfotec.componentes.repository.QuoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
@@ -9,23 +9,18 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/users")
-public class UserApi {
+public class QuoteApi {
 
     @Autowired
-    private UserRepository userRepository;
+    private QuoteRepository userRepository;
 
     @GetMapping
-    public Flux<User> getAllUsers() {
+    public Flux<Quote> getAllUsers() {
         return userRepository.findAll();
     }
 
-    @GetMapping("/age")
-    public Flux<User> getUsersByAge(@RequestParam int age) {
-        return userRepository.findByAge(age);
-    }
-
     @PostMapping("/saveUser")
-    public Mono<User> saveUser(@RequestBody User u) {
+    public Mono<Quote> saveUser(@RequestBody Quote u) {
         return userRepository.save(u);
     }
 

@@ -1,10 +1,9 @@
 package com.cenfotec.componentes.repository;
 
-import com.cenfotec.componentes.domain.User;
+import com.cenfotec.componentes.domain.Quote;
 import org.springframework.cloud.gcp.data.firestore.FirestoreReactiveRepository;
 import reactor.core.publisher.Flux;
 
-public interface UserRepository extends FirestoreReactiveRepository<User> {
-
-    Flux<User> findByAge(int age);
+public interface QuoteRepository extends FirestoreReactiveRepository<Quote> {
+	
 }
