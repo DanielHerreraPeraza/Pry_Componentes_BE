@@ -3,5 +3,4 @@ steps:
   args: ['install']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/proyectocomponentes-9f935/dockerfile', '.']
-  wait_for: ['latest'] 
-images: ['gcr.io/proyectocomponentes-9f935/dockerfile:latest']
+images: ['gcr.io/proyectocomponentes-9f935/dockerfile']
