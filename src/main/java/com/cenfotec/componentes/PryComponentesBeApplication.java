@@ -10,4 +10,5 @@ public class PryComponentesBeApplication {
 		SpringApplication.run(PryComponentesBeApplication.class, args);
 	}
 
+
 }
