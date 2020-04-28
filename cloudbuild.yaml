@@ -2,5 +2,5 @@ steps:
 - name: 'gcr.io/cloud-builders/mvn'
   args: ['install']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '--tag=gcr.io/$proyectocomponentes-9f935/Dockerfile', '.']
-images: ['gcr.io/proyectocomponentes-9f935/Dockerfile']
+  args: ['build', '--tag=gcr.io/$proyectocomponentes-9f935/dockerfile', '.']
+images: ['gcr.io/proyectocomponentes-9f935/dockerfile']
