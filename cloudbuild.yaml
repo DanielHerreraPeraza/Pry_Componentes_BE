@@ -2,5 +2,5 @@ steps:
 - name: 'gcr.io/cloud-builders/mvn'
   args: ['install']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/proyectocomponentes-9f935/dockerfile@sha256:97e40495082e130ae98996d1779ac39afe397b843768ab56b66816d9218d0cf2', '.']
-images: ['gcr.io/proyectocomponentes-9f935/dockerfile@sha256:97e40495082e130ae98996d1779ac39afe397b843768ab56b66816d9218d0cf2']
+  args: ['build', '-t', 'gcr.io/proyectocomponentes-9f935/dockerfile@sha256:75003d774d0783d99a3a042f871a8c0747202061f87f350a424178b3d0f13570', '.']
+images: ['gcr.io/proyectocomponentes-9f935/dockerfile@sha256:75003d774d0783d99a3a042f871a8c0747202061f87f350a424178b3d0f13570']
