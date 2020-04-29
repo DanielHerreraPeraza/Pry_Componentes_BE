@@ -61,6 +61,14 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<resources>
+	      <resource>
+	        <directory>src/key</directory>
+	        <includes>
+	          <include>key.json</include>
+	        </includes>
+	      </resource>
+    	</resources>
 	</build>
 
 </project>
