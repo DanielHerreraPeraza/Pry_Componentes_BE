@@ -55,6 +55,7 @@
 	</dependencies>
 
 	<build>
+		
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -65,10 +66,18 @@
 	      <resource>
 	        <directory>src/key</directory>
 	        <includes>
-	          <include>key.json</include>
+	          <include>**/*.json</include>
 	        </includes>
 	      </resource>
     	</resources>
+    	 <testResources>
+        <testResource>
+            <directory>src/key</directory>
+            <includes>
+                <include>**/*.json</include>
+            </includes>
+        </testResource>
+    </testResources>
 	</build>
 
 </project>
