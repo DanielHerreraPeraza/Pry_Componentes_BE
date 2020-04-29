@@ -64,15 +64,15 @@
 		</plugins>
 		<resources>
 	      <resource>
-	        <directory>src/key</directory>
+	        <directory>src/main/resources</directory>
 	        <includes>
 	          <include>**/*.json</include>
 	        </includes>
 	      </resource>
     	</resources>
-    	 <testResources>
+    	   <testResources>
         <testResource>
-            <directory>src/key</directory>
+            <directory>src/main/resources</directory>
             <includes>
                 <include>**/*.json</include>
             </includes>
