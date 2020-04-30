@@ -3,6 +3,8 @@ steps:
   args: ['install']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/proyectocomponentes-9f935/dockerfile', '.']
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/proyectocomponentes-9f935/docker']
   name: 'gcr.io/cloud-builders/gcloud'
   args: ['run', 'deploy', 'backendcomponentes', '--image', 'gcr.io/proyectocomponentes-9f935/dockerfile', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
 images: ['gcr.io/proyectocomponentes-9f935/dockerfile']
