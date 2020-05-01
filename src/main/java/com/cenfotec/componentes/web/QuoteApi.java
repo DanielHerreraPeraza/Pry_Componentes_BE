@@ -2,6 +2,8 @@ package com.cenfotec.componentes.web;
 
 import com.cenfotec.componentes.domain.Quote;
 import com.cenfotec.componentes.repository.QuoteRepository;
+import com.cenfotec.componentes.task.CreateTask;
+import com.cenfotec.componentes.task.TaskServlet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
@@ -16,8 +18,11 @@ public class QuoteApi {
     @Autowired
     private QuoteRepository userRepository;
 
+    private CreateTask taskManager = new CreateTask();
+
     @GetMapping
-    public Flux<Quote> getAllQuotes() {
+    public Flux<Quote> getAllQuotes() throws Exception {
+        taskManager.createTask();
         return userRepository.findAll();
     }
 
