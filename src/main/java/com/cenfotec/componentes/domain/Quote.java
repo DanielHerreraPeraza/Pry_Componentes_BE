@@ -12,6 +12,7 @@ public class Quote {
     private String id;
     private String pet;
     private String owner;
+    private String email;
     private Date date;
     private String hour;
     private String symptom;
@@ -19,10 +20,11 @@ public class Quote {
     Quote() {
     }
     
-	public Quote(String id, String pet, String owner, Date date, String hour, String symptom) {
+	public Quote(String id, String pet, String owner, String email, Date date, String hour, String symptom) {
 		this.id = id;
 		this.pet = pet;
 		this.owner = owner;
+		this.email = email;
 		this.date = date;
 		this.hour = hour;
 		this.symptom = symptom;
@@ -52,6 +54,14 @@ public class Quote {
 		this.owner = owner;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public Date getDate() {
 		return date;
 	}
@@ -76,6 +86,14 @@ public class Quote {
 		this.symptom = symptom;
 	}
 
-    
-
+	@Override
+	public String toString() {
+		return  id + '\'' +
+				"," + pet + '\'' +
+				"," + owner + '\'' +
+				"," + email + '\'' +
+				"," + date +
+				"," + hour + '\'' +
+				"," + symptom;
+	}
 }

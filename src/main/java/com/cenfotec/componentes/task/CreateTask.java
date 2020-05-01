@@ -1,5 +1,6 @@
 package com.cenfotec.componentes.task;
 
+import com.cenfotec.componentes.domain.Quote;
 import com.google.cloud.tasks.v2.*;
 import com.google.protobuf.ByteString;
 
@@ -8,14 +9,14 @@ import java.nio.charset.Charset;
 
 public class CreateTask {
     // Instantiates a client.
-    public void createTask() throws IOException {
+    public void createTask(Quote newQuote) throws IOException {
         try (CloudTasksClient client = CloudTasksClient.create()) {
 
             // Variables provided by the CLI.
             String projectId = "proyectocomponentes-9f935";
             String queueName = "COLA";
             String location = "us-central1";
-            String payload = "hello";
+            String payload = newQuote.toString();
 
             // Construct the fully qualified queue name.
             String queuePath = QueueName.of(projectId, location, queueName).toString();
