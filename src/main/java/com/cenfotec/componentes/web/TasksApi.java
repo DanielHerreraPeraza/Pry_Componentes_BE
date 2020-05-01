@@ -8,9 +8,10 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins= "*")
 public class TasksApi {
 
-    @PostMapping
-    public void task(@RequestBody String payload) {
-    	System.out.println("Received task request: " + payload);
+    @GetMapping
+    public String task() {
+    	System.out.println("Received task request: ");
+    	return "Sirvió!";
     }
 
 }
