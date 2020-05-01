@@ -18,6 +18,7 @@ public class TaskServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    	System.out.println("Received task request: " + req.getServletPath());
         log.info("Received task request: " + req.getServletPath());
         String body = req.getReader()
                 .lines()
