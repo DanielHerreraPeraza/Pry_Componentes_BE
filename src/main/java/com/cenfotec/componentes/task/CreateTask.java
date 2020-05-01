@@ -26,7 +26,7 @@ public class CreateTask {
                             .setAppEngineHttpRequest(
                                     AppEngineHttpRequest.newBuilder()
                                             .setBody(ByteString.copyFrom(payload, Charset.defaultCharset()))
-                                            .setRelativeUri("/tasks/create")
+                                            .setRelativeUri("/tasks")
                                             .setHttpMethod(HttpMethod.POST)
                                             .build());
 
