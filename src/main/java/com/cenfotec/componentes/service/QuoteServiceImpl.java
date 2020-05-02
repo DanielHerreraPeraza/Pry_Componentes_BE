@@ -18,12 +18,12 @@ public class QuoteServiceImpl implements QuoteService{
     }
 
     @Override
-    public Mono<Quote> save(Quote u) {
+    public Mono<Quote> saveQuote(Quote u) {
         return userRepo.save(u);
     }
 
     @Override
-    public Mono<Void> deleteById(String id) {
+    public Mono<Void> deleteQuote(String id) {
         return userRepo.deleteById(id);
     }
 }
