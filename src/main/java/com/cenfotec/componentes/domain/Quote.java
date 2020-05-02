@@ -88,12 +88,11 @@ public class Quote {
 
 	@Override
 	public String toString() {
-		return  id + '\'' +
-				"," + pet + '\'' +
-				"," + owner + '\'' +
-				"," + email + '\'' +
+		return  pet +
+				"," + owner +
+				"," + email +
 				"," + date +
-				"," + hour + '\'' +
+				"," + hour +
 				"," + symptom;
 	}
 }
