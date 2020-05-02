@@ -17,7 +17,7 @@ import java.io.IOException;
 public class QuoteApi {
 
     @Autowired
-    private QuoteRepository userService;
+    private QuoteService userService;
 
     private CreateTask taskManager = new CreateTask();
 

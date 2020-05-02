@@ -6,6 +6,6 @@ import reactor.core.publisher.Mono;
 
 public interface QuoteService {
     Flux<Quote> findAll();
-    Mono<Quote> saveQuote(Quote u);
-    Mono<Void> deleteQuote(String id);
+    Mono<Quote> save(Quote u);
+    Mono<Void> deleteById(String id);
 }
