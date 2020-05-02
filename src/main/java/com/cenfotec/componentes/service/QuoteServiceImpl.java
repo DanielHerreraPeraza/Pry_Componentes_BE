@@ -15,6 +15,7 @@ public class QuoteServiceImpl implements QuoteService{
 
     @Override
     public void saveQuote(Quote u) {
+        //
         userRepo.save(u);
     }
 }
