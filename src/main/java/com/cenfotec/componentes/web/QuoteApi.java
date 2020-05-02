@@ -1,6 +1,7 @@
 package com.cenfotec.componentes.web;
 
 import com.cenfotec.componentes.domain.Quote;
+import com.cenfotec.componentes.repository.QuoteRepository;
 import com.cenfotec.componentes.service.QuoteService;
 import com.cenfotec.componentes.task.CreateTask;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import java.io.IOException;
 public class QuoteApi {
 
     @Autowired
-    private QuoteService userService;
+    private QuoteRepository userService;
 
     private CreateTask taskManager = new CreateTask();
 
@@ -28,12 +29,12 @@ public class QuoteApi {
     @PostMapping
     public Mono<Quote> Quote(@RequestBody Quote u) throws IOException {
         taskManager.createTask(u);
-        return userService.saveQuote(u);
+        return userService.save(u);
     }
     
     @DeleteMapping
     public Mono<Void> Quote(@RequestParam String id) {
-        return userService.deleteQuote(id);
+        return userService.deleteById(id);
     }
 
 }
