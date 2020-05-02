@@ -27,10 +27,8 @@ public class QuoteApi {
 
     @PostMapping
     public Mono<Quote> Quote(@RequestBody Quote u) throws IOException {
-        Mono<Quote> newQuote = userService.saveQuote(u);
-        if (newQuote != null)
-            taskManager.createTask(u);
-    return newQuote;
+        taskManager.createTask(u);
+        return userService.saveQuote(u);
     }
     
     @DeleteMapping
